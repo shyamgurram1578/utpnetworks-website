@@ -4,505 +4,34 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>UTP Originals | Telugu Entertainment | Dallas, TX</title>
+  
+  <!-- SEO Meta Tags -->
   <meta name="description" content="UTP Originals — a bold production house from Dallas creating Telugu content: car shows, entrepreneur podcasts, celebrity interviews, and influencer collabs." />
-  <style>
-    :root {
-      --bg:        #07070E;
-      --bg-card:   #0E0E1B;
-      --orange:    #FF6B35;
-      --gold:      #FFB800;
-      --red:       #E63946;
-      --purple:    #7B2FBE;
-      --blue:      #4361EE;
-      --teal:      #00B4B4;
-      --white:     #F2F2F2;
-      --gray:      #8A8AA0;
-      --g1: linear-gradient(135deg,#FF6B35,#FFB800);
-      --g2: linear-gradient(135deg,#7B2FBE,#4361EE);
-    }
+  <meta name="keywords" content="UTP Originals, Telugu Entertainment, Dallas, Telugu Production, Car Shows, Telugu Podcasts, USA Telugu" />
+  <meta name="author" content="UTP Networks" />
+  
+  <!-- Open Graph / Facebook -->
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://utpnetworks.com/" />
+  <meta property="og:title" content="UTP Originals | Telugu Entertainment | Dallas, TX" />
+  <meta property="og:description" content="A bold production house from Dallas creating authentic Telugu content: car shows, podcasts, and more." />
+  <meta property="og:image" content="https://utpnetworks.com/og-image.jpg" />
 
-    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-    html { scroll-behavior: smooth; }
+  <!-- Twitter -->
+  <meta property="twitter:card" content="summary_large_image" />
+  <meta property="twitter:url" content="https://utpnetworks.com/" />
+  <meta property="twitter:title" content="UTP Originals | Telugu Entertainment | Dallas, TX" />
+  <meta property="twitter:description" content="A bold production house from Dallas creating authentic Telugu content: car shows, podcasts, and more." />
+  <meta property="twitter:image" content="https://utpnetworks.com/og-image.jpg" />
 
-    body {
-      font-family: 'Segoe UI', system-ui, sans-serif;
-      background: var(--bg);
-      color: var(--white);
-      overflow-x: hidden;
-    }
-
-    /* ── UTILITY ── */
-    .container { max-width: 1180px; margin: 0 auto; padding: 0 24px; }
-    .grad-text  { background: var(--g1); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
-    .section-label {
-      display: inline-block;
-      font-size: 11px; font-weight: 700; letter-spacing: 3px;
-      text-transform: uppercase; color: var(--orange); margin-bottom: 14px;
-    }
-    .section-title { font-size: clamp(28px,4vw,50px); font-weight: 900; line-height: 1.1; margin-bottom: 14px; }
-    .section-desc  { font-size: 16px; color: var(--gray); line-height: 1.75; max-width: 580px; }
-
-    /* ── REVEAL ── */
-    .reveal { opacity: 0; transform: translateY(28px); transition: opacity .7s ease, transform .7s ease; }
-    .reveal.on { opacity: 1; transform: none; }
-
-    /* ═══════════════════════════════════════════
-       NAVBAR
-    ═══════════════════════════════════════════ */
-    nav {
-      position: fixed; top: 0; width: 100%; z-index: 999;
-      padding: 14px 36px;
-      display: flex; align-items: center; justify-content: space-between;
-      background: rgba(7,7,14,.82); backdrop-filter: blur(18px);
-      border-bottom: 1px solid rgba(255,107,53,.12);
-      transition: background .3s;
-    }
-    .nav-logo { display: flex; align-items: center; gap: 12px; text-decoration: none; }
-    .logo-box {
-      width: 40px; height: 40px; border-radius: 10px;
-      background: var(--g1);
-      display: flex; align-items: center; justify-content: center;
-      font-weight: 900; font-size: 15px; color: #000; letter-spacing: -1px;
-    }
-    .logo-words { display: flex; flex-direction: column; }
-    .logo-words .brand { font-size: 17px; font-weight: 800; background: var(--g1); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; line-height: 1; }
-    .logo-words .sub   { font-size: 10px; color: var(--gray); letter-spacing: 2.5px; text-transform: uppercase; margin-top: 2px; }
-    nav ul { list-style: none; display: flex; gap: 28px; }
-    nav ul a { color: var(--gray); text-decoration: none; font-size: 14px; font-weight: 500; transition: color .2s; }
-    nav ul a:hover { color: var(--orange); }
-    .nav-yt {
-      background: var(--g1) !important; color: #000 !important; padding: 9px 22px;
-      border-radius: 30px; font-weight: 800 !important; font-size: 13px !important;
-      transition: transform .2s, box-shadow .2s !important;
-    }
-    .nav-yt:hover { transform: translateY(-2px); box-shadow: 0 8px 24px rgba(255,107,53,.45) !important; color: #000 !important; }
-
-    /* ═══════════════════════════════════════════
-       HERO
-    ═══════════════════════════════════════════ */
-    .hero {
-      min-height: 100vh;
-      display: flex; align-items: center; justify-content: center;
-      padding-top: 82px; padding-bottom: 60px;
-      position: relative; overflow: hidden; text-align: center;
-      background: radial-gradient(ellipse 80% 60% at 50% -10%, #1A0830 0%, transparent 70%),
-                  radial-gradient(ellipse 60% 50% at 90% 80%,  #0A2040 0%, transparent 60%),
-                  var(--bg);
-    }
-
-    /* grid lines */
-    .hero::before {
-      content: '';
-      position: absolute; inset: 0;
-      background-image:
-        linear-gradient(rgba(255,107,53,.04) 1px, transparent 1px),
-        linear-gradient(90deg, rgba(255,107,53,.04) 1px, transparent 1px);
-      background-size: 56px 56px;
-    }
-
-    /* orbs */
-    .orb {
-      position: absolute; border-radius: 50%;
-      filter: blur(90px); opacity: .25;
-      animation: float 9s ease-in-out infinite;
-      pointer-events: none;
-    }
-    .orb1 { width: 520px; height: 520px; background: radial-gradient(circle,#FF6B35,transparent); top:-120px; right:-140px; animation-delay:0s; }
-    .orb2 { width: 440px; height: 440px; background: radial-gradient(circle,#7B2FBE,transparent); bottom:-120px; left:-120px; animation-delay:3s; }
-    .orb3 { width: 320px; height: 320px; background: radial-gradient(circle,#FFB800,transparent); top:45%; left:38%; animation-delay:6s; }
-
-    @keyframes float {
-      0%,100% { transform: translateY(0) scale(1); }
-      50%      { transform: translateY(-28px) scale(1.06); }
-    }
-
-    .hero-content { position: relative; z-index: 2; max-width: 860px; padding: 0 20px; }
-
-    .hero-badge {
-      display: inline-flex; align-items: center; gap: 8px;
-      background: rgba(255,107,53,.1); border: 1px solid rgba(255,107,53,.28);
-      border-radius: 30px; padding: 7px 18px; font-size: 12px;
-      color: var(--orange); font-weight: 600; letter-spacing: 1px;
-      margin-bottom: 26px; animation: fadeDown .7s ease both;
-    }
-    .hero-badge .dot { width: 6px; height: 6px; border-radius: 50%; background: #44FF66; animation: blink 2s infinite; }
-    @keyframes blink { 0%,100%{opacity:1} 50%{opacity:.2} }
-
-    .hero-title {
-      font-size: clamp(46px,8vw,96px); font-weight: 900; line-height: 1.02;
-      margin-bottom: 6px; animation: fadeUp .7s .15s ease both;
-    }
-    .hero-telugu {
-      font-size: clamp(15px,2.2vw,20px); color: var(--gold);
-      letter-spacing: 2.5px; margin-bottom: 22px; font-style: italic;
-      animation: fadeUp .7s .28s ease both;
-    }
-    .hero-desc {
-      font-size: clamp(15px,1.8vw,18px); color: var(--gray); line-height: 1.75;
-      max-width: 620px; margin: 0 auto 40px; animation: fadeUp .7s .42s ease both;
-    }
-    .hero-btns {
-      display: flex; gap: 14px; justify-content: center; flex-wrap: wrap;
-      animation: fadeUp .7s .56s ease both;
-    }
-    .btn-primary {
-      display: inline-flex; align-items: center; gap: 8px;
-      background: var(--g1); color: #000; padding: 15px 34px;
-      border-radius: 40px; font-weight: 800; font-size: 15px;
-      text-decoration: none; transition: transform .25s, box-shadow .25s;
-    }
-    .btn-primary:hover { transform: translateY(-3px); box-shadow: 0 18px 40px rgba(255,107,53,.5); }
-    .btn-secondary {
-      display: inline-flex; align-items: center; gap: 8px;
-      background: transparent; color: var(--white); padding: 14px 34px;
-      border-radius: 40px; font-weight: 700; font-size: 15px;
-      text-decoration: none; border: 1.5px solid rgba(255,255,255,.18);
-      transition: transform .25s, border-color .25s, color .25s;
-    }
-    .btn-secondary:hover { transform: translateY(-3px); border-color: var(--orange); color: var(--orange); }
-
-    .hero-stats {
-      display: flex; gap: 44px; justify-content: center; margin-top: 58px;
-      flex-wrap: wrap; animation: fadeUp .7s .7s ease both;
-    }
-    .stat-num { font-size: 34px; font-weight: 900; background: var(--g1); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
-    .stat-lbl { font-size: 11px; color: var(--gray); letter-spacing: 1.5px; text-transform: uppercase; margin-top: 2px; }
-
-    .scroll-hint {
-      position: absolute; bottom: 28px; left: 50%; transform: translateX(-50%);
-      display: flex; flex-direction: column; align-items: center; gap: 6px;
-      opacity: .4; animation: bounce 2.2s infinite;
-    }
-    .scroll-hint span { font-size: 10px; letter-spacing: 2px; text-transform: uppercase; color: var(--gray); }
-    .chevron { width: 18px; height: 18px; border-right: 2px solid var(--gray); border-bottom: 2px solid var(--gray); transform: rotate(45deg); }
-    @keyframes bounce { 0%,100%{transform:translateX(-50%) translateY(0)} 50%{transform:translateX(-50%) translateY(7px)} }
-    @keyframes fadeUp   { from{opacity:0;transform:translateY(28px)} to{opacity:1;transform:none} }
-    @keyframes fadeDown { from{opacity:0;transform:translateY(-18px)} to{opacity:1;transform:none} }
-
-    /* ═══════════════════════════════════════════
-       MARQUEE
-    ═══════════════════════════════════════════ */
-    .marquee-bar {
-      padding: 22px 0; overflow: hidden;
-      background: rgba(255,107,53,.07);
-      border-top: 1px solid rgba(255,107,53,.14);
-      border-bottom: 1px solid rgba(255,107,53,.14);
-    }
-    .marquee-track { display: flex; gap: 56px; animation: marquee 22s linear infinite; width: max-content; }
-    .m-item { display: flex; align-items: center; gap: 14px; white-space: nowrap; font-size: 13px; font-weight: 600; color: var(--gray); letter-spacing: 1px; }
-    .m-dot  { width: 5px; height: 5px; border-radius: 50%; background: var(--orange); flex-shrink: 0; }
-    @keyframes marquee { from{transform:translateX(0)} to{transform:translateX(-50%)} }
-
-    /* ═══════════════════════════════════════════
-       YOUTUBE SECTION
-    ═══════════════════════════════════════════ */
-    .yt-section {
-      padding: 100px 0;
-      background: linear-gradient(180deg, var(--bg) 0%, #0D0820 50%, var(--bg) 100%);
-      position: relative; overflow: hidden;
-    }
-    .yt-section::before {
-      content: ''; position: absolute; top: 0; left: 0; right: 0;
-      height: 1px; background: var(--g1);
-    }
-    .yt-header { text-align: center; margin-bottom: 48px; }
-    .yt-header .section-desc { margin: 0 auto; }
-
-    /* Featured player */
-    .yt-featured {
-      position: relative; max-width: 880px; margin: 0 auto 40px;
-    }
-    .yt-glow {
-      position: absolute; inset: -24px;
-      background: radial-gradient(ellipse at center, rgba(255,107,53,.22), transparent 68%);
-      border-radius: 30px; pointer-events: none;
-    }
-    .yt-frame {
-      position: relative; padding-bottom: 56.25%; height: 0;
-      border-radius: 20px; overflow: hidden;
-      border: 1px solid rgba(255,107,53,.28);
-      box-shadow: 0 0 80px rgba(255,107,53,.18), 0 40px 80px rgba(0,0,0,.75);
-    }
-    .yt-frame iframe { position: absolute; inset: 0; width: 100%; height: 100%; border: 0; }
-
-    /* Video grid */
-    .yt-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(230px, 1fr));
-      gap: 16px; margin-top: 32px;
-    }
-    .yt-thumb {
-      background: var(--bg-card); border-radius: 14px; overflow: hidden;
-      border: 1px solid rgba(255,255,255,.06); cursor: pointer;
-      transition: transform .3s, border-color .3s, box-shadow .3s;
-    }
-    .yt-thumb:hover, .yt-thumb.active {
-      transform: translateY(-4px);
-      border-color: rgba(255,107,53,.45);
-      box-shadow: 0 12px 32px rgba(255,107,53,.15);
-    }
-    .yt-thumb-img {
-      position: relative; padding-bottom: 56.25%; overflow: hidden;
-    }
-    .yt-thumb-img img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
-    .yt-play-overlay {
-      position: absolute; inset: 0; display: flex; align-items: center; justify-content: center;
-      background: rgba(0,0,0,.3); opacity: 0; transition: opacity .2s;
-    }
-    .yt-thumb:hover .yt-play-overlay { opacity: 1; }
-    .yt-play-icon {
-      width: 44px; height: 44px; background: rgba(255,107,53,.9);
-      border-radius: 50%; display: flex; align-items: center; justify-content: center;
-    }
-    .yt-thumb-info { padding: 12px; }
-    .yt-thumb-title {
-      font-size: 13px; font-weight: 600; line-height: 1.4; color: var(--white);
-      display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden;
-      margin-bottom: 6px;
-    }
-    .yt-thumb-date { font-size: 11px; color: var(--gray); }
-
-    /* Loading & error states */
-    .yt-loading {
-      text-align: center; padding: 60px 20px; color: var(--gray); font-size: 15px;
-    }
-    .yt-loading .spin {
-      display: inline-block; width: 36px; height: 36px;
-      border: 3px solid rgba(255,107,53,.2); border-top-color: var(--orange);
-      border-radius: 50%; animation: spin .8s linear infinite; margin-bottom: 14px;
-    }
-    @keyframes spin { to { transform: rotate(360deg); } }
-
-    .yt-cta { text-align: center; margin-top: 40px; }
-    .btn-yt {
-      display: inline-flex; align-items: center; gap: 10px;
-      background: linear-gradient(135deg,#FF2020,#CC0000); color: #fff;
-      padding: 15px 38px; border-radius: 40px; font-weight: 800; font-size: 15px;
-      text-decoration: none; transition: transform .25s, box-shadow .25s;
-    }
-    .btn-yt:hover { transform: translateY(-3px); box-shadow: 0 18px 40px rgba(255,0,0,.42); }
-
-    /* ═══════════════════════════════════════════
-       SHOWS
-    ═══════════════════════════════════════════ */
-    .shows-section { padding: 100px 0; background: #060610; }
-    .shows-header { margin-bottom: 56px; }
-    .shows-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 26px; }
-
-    .show-card {
-      background: var(--bg-card); border-radius: 22px;
-      border: 1px solid rgba(255,255,255,.06); overflow: hidden;
-      transition: transform .35s, border-color .35s, box-shadow .35s;
-    }
-    .show-card:hover {
-      transform: translateY(-8px);
-      border-color: rgba(255,107,53,.3);
-      box-shadow: 0 32px 64px rgba(0,0,0,.55), 0 0 36px rgba(255,107,53,.1);
-    }
-    .show-thumb {
-      height: 190px; position: relative;
-      display: flex; align-items: center; justify-content: center;
-    }
-    .show-thumb.cars    { background: linear-gradient(135deg,#1C0800,#3D1200); }
-    .show-thumb.pod     { background: linear-gradient(135deg,#0C0024,#200050); }
-    .show-thumb.celeb   { background: linear-gradient(135deg,#001C1C,#004040); }
-    .show-thumb.collab  { background: linear-gradient(135deg,#1C1800,#3D3200); }
-
-    .show-emoji {
-      font-size: 76px; filter: drop-shadow(0 0 18px rgba(255,107,53,.5));
-      transition: transform .35s;
-    }
-    .show-card:hover .show-emoji { transform: scale(1.18) rotate(4deg); }
-
-    .show-badge {
-      position: absolute; top: 14px; left: 14px;
-      padding: 5px 13px; border-radius: 20px;
-      font-size: 10px; font-weight: 800; letter-spacing: 1.2px; text-transform: uppercase;
-    }
-    .b-orange { background: rgba(255,107,53,.9);  color: #000; }
-    .b-purple { background: rgba(123,47,190,.9);  color: #fff; }
-    .b-teal   { background: rgba(0,180,180,.9);   color: #000; }
-    .b-gold   { background: rgba(255,184,0,.9);   color: #000; }
-
-    .show-body { padding: 22px; }
-    .show-body h3 { font-size: 20px; font-weight: 800; margin-bottom: 10px; }
-    .show-body p  { font-size: 13.5px; color: var(--gray); line-height: 1.72; margin-bottom: 20px; }
-    .show-foot { display: flex; align-items: center; justify-content: space-between; }
-    .show-tag2 { font-size: 12px; color: var(--orange); font-weight: 600; }
-    .watch-a { font-size: 13px; color: var(--gray); text-decoration: none; transition: color .2s; display: flex; align-items: center; gap: 5px; }
-    .watch-a:hover { color: var(--orange); }
-
-    /* ═══════════════════════════════════════════
-       ABOUT
-    ═══════════════════════════════════════════ */
-    .about-section { padding: 100px 0; background: linear-gradient(135deg, #060610 0%, #0D0822 100%); }
-    .about-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 80px; align-items: center; margin-top: 0; }
-
-    .about-visual { position: relative; }
-    .about-box {
-      background: linear-gradient(135deg,#1A0032,#0A2040);
-      border-radius: 22px; height: 390px;
-      display: flex; align-items: center; justify-content: center;
-      position: relative; overflow: hidden;
-      border: 1px solid rgba(255,107,53,.18);
-    }
-    .about-bg-text {
-      position: absolute; font-size: 140px; font-weight: 900;
-      opacity: .055; color: var(--orange); pointer-events: none; user-select: none;
-    }
-    .about-icons {
-      display: grid; grid-template-columns: 1fr 1fr; gap: 14px;
-      padding: 36px; position: relative; z-index: 1; width: 100%;
-    }
-    .ai-item {
-      background: rgba(255,255,255,.05); border-radius: 14px; padding: 18px;
-      text-align: center; border: 1px solid rgba(255,255,255,.06);
-      transition: background .2s;
-    }
-    .ai-item:hover { background: rgba(255,107,53,.08); }
-    .ai-item .emo { font-size: 34px; margin-bottom: 6px; }
-    .ai-item .lbl { font-size: 11px; color: var(--gray); font-weight: 600; }
-    .about-tag {
-      position: absolute; bottom: -18px; right: -18px;
-      background: var(--g1); color: #000; padding: 14px 22px;
-      border-radius: 14px; font-weight: 800; font-size: 13px;
-      box-shadow: 0 14px 36px rgba(255,107,53,.4);
-    }
-
-    .about-text .section-desc { margin-bottom: 22px; }
-    .features { display: flex; flex-direction: column; gap: 18px; margin-top: 30px; }
-    .feat {
-      display: flex; align-items: flex-start; gap: 14px;
-      padding: 16px; border-radius: 14px;
-      border: 1px solid rgba(255,255,255,.05);
-      background: rgba(255,255,255,.02);
-      transition: border-color .25s, background .25s;
-    }
-    .feat:hover { border-color: rgba(255,107,53,.25); background: rgba(255,107,53,.04); }
-    .feat-ico {
-      width: 38px; height: 38px; border-radius: 10px; flex-shrink: 0;
-      background: rgba(255,107,53,.14); border: 1px solid rgba(255,107,53,.28);
-      display: flex; align-items: center; justify-content: center; font-size: 17px;
-    }
-    .feat-txt h4 { font-size: 14px; font-weight: 700; margin-bottom: 3px; }
-    .feat-txt p  { font-size: 13px; color: var(--gray); }
-
-    /* ═══════════════════════════════════════════
-       COMMUNITY
-    ═══════════════════════════════════════════ */
-    .comm-section {
-      padding: 100px 0; background: #050509;
-      text-align: center; position: relative; overflow: hidden;
-    }
-    .comm-section::before {
-      content: 'తెలుగు';
-      position: absolute; font-size: 280px; font-weight: 900;
-      opacity: .018; color: var(--gold);
-      top: 50%; left: 50%; transform: translate(-50%,-50%);
-      pointer-events: none; white-space: nowrap;
-    }
-    .comm-header .section-desc { margin: 0 auto; }
-    .comm-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 22px; margin-top: 56px; }
-    .comm-card {
-      background: var(--bg-card); border-radius: 20px; padding: 36px 24px;
-      border: 1px solid rgba(255,255,255,.06); position: relative; overflow: hidden;
-      transition: transform .3s, border-color .3s;
-    }
-    .comm-card::before {
-      content: ''; position: absolute; top: 0; left: 0; right: 0; height: 3px;
-    }
-    .comm-card:nth-child(1)::before { background: var(--g1); }
-    .comm-card:nth-child(2)::before { background: var(--g2); }
-    .comm-card:nth-child(3)::before { background: linear-gradient(135deg,#00B4D8,#0077B6); }
-    .comm-card:hover { transform: translateY(-6px); border-color: rgba(255,107,53,.2); }
-    .comm-emo { font-size: 46px; margin-bottom: 14px; }
-    .comm-card h3 { font-size: 19px; font-weight: 800; margin-bottom: 10px; }
-    .comm-card p  { font-size: 14px; color: var(--gray); line-height: 1.72; }
-
-    /* ═══════════════════════════════════════════
-       CONTACT
-    ═══════════════════════════════════════════ */
-    .contact-section {
-      padding: 100px 0;
-      background: linear-gradient(135deg,#0A0018,#001430);
-      position: relative; overflow: hidden;
-    }
-    .contact-grid { display: grid; grid-template-columns: 1.15fr 1fr; gap: 80px; align-items: start; }
-    .contact-title { font-size: clamp(28px,4vw,52px); font-weight: 900; line-height: 1.12; margin-bottom: 18px; }
-    .contact-desc { font-size: 16px; color: var(--gray); line-height: 1.75; margin-bottom: 34px; }
-    .socials { display: flex; gap: 14px; flex-wrap: wrap; }
-    .soc-btn {
-      display: inline-flex; align-items: center; gap: 9px;
-      padding: 12px 22px; border-radius: 12px; font-size: 14px; font-weight: 700;
-      text-decoration: none; transition: transform .2s, box-shadow .2s;
-      border: 1px solid rgba(255,255,255,.09);
-    }
-    .soc-btn:hover { transform: translateY(-3px); }
-    .soc-yt   { background: rgba(255,0,0,.1);    color: #FF4444; }
-    .soc-ig   { background: rgba(225,48,108,.1); color: #E1306C; }
-    .soc-loc  { background: rgba(255,184,0,.1);  color: var(--gold); }
-
-    .cform {
-      background: var(--bg-card); border-radius: 22px; padding: 34px;
-      border: 1px solid rgba(255,255,255,.06);
-    }
-    .cform h3 { font-size: 19px; font-weight: 800; margin-bottom: 22px; }
-    .fgrp { margin-bottom: 14px; }
-    .fgrp input, .fgrp textarea {
-      width: 100%; background: rgba(255,255,255,.04);
-      border: 1px solid rgba(255,255,255,.08); border-radius: 11px;
-      padding: 13px 16px; font-size: 14px; color: var(--white);
-      font-family: inherit; outline: none; transition: border-color .2s;
-    }
-    .fgrp input::placeholder, .fgrp textarea::placeholder { color: var(--gray); }
-    .fgrp input:focus, .fgrp textarea:focus { border-color: rgba(255,107,53,.5); }
-    .fgrp textarea { height: 96px; resize: none; }
-    .fsubmit {
-      width: 100%; padding: 14px; border-radius: 11px;
-      background: var(--g1); color: #000; font-size: 14px; font-weight: 800;
-      border: none; cursor: pointer; transition: transform .2s, box-shadow .2s;
-    }
-    .fsubmit:hover { transform: translateY(-2px); box-shadow: 0 10px 28px rgba(255,107,53,.4); }
-
-    /* ═══════════════════════════════════════════
-       FOOTER
-    ═══════════════════════════════════════════ */
-    footer {
-      background: #030305; padding: 36px 36px;
-      border-top: 1px solid rgba(255,255,255,.05);
-    }
-    .footer-inner {
-      max-width: 1180px; margin: 0 auto;
-      display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 18px;
-    }
-    .footer-copy { font-size: 13px; color: var(--gray); }
-    .footer-copy span { color: var(--orange); }
-    .footer-links { display: flex; gap: 22px; }
-    .footer-links a { color: var(--gray); text-decoration: none; font-size: 13px; transition: color .2s; }
-    .footer-links a:hover { color: var(--orange); }
-
-    /* ═══════════════════════════════════════════
-       RESPONSIVE
-    ═══════════════════════════════════════════ */
-    @media (max-width: 900px) {
-      nav { padding: 13px 18px; }
-      nav ul { display: none; }
-      .about-grid   { grid-template-columns: 1fr; gap: 44px; }
-      .comm-grid    { grid-template-columns: 1fr; }
-      .contact-grid { grid-template-columns: 1fr; gap: 44px; }
-    }
-    @media (max-width: 600px) {
-      .hero-stats { gap: 22px; }
-      footer { padding: 28px 18px; }
-      .footer-inner { flex-direction: column; text-align: center; }
-    }
-  </style>
+  <!-- External Styles -->
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
 <!-- ══════════════════════ NAVBAR ══════════════════════ -->
 <nav id="navbar">
-  <a href="#home" class="nav-logo">
+  <a href="#home" class="nav-logo" aria-label="UTP Originals Home">
     <div class="logo-box">UTP</div>
     <div class="logo-words">
       <span class="brand">UTP Originals</span>
@@ -514,7 +43,7 @@
     <li><a href="#about">About</a></li>
     <li><a href="#community">Community</a></li>
     <li><a href="#contact">Collaborate</a></li>
-    <li><a href="https://www.youtube.com/@UTPOriginals" target="_blank" class="nav-yt">▶ Watch Now</a></li>
+    <li><a href="https://www.youtube.com/@UTPOriginals" target="_blank" class="nav-yt" rel="noopener">▶ Watch Now</a></li>
   </ul>
 </nav>
 
@@ -543,7 +72,7 @@
     </p>
 
     <div class="hero-btns">
-      <a href="https://www.youtube.com/@UTPOriginals" target="_blank" class="btn-primary">▶&nbsp; Watch Our Shows</a>
+      <a href="https://www.youtube.com/@UTPOriginals" target="_blank" class="btn-primary" rel="noopener">▶&nbsp; Watch Our Shows</a>
       <a href="#contact" class="btn-secondary">✦&nbsp; Collaborate With Us</a>
     </div>
 
@@ -621,7 +150,7 @@
     <div class="yt-grid" id="ytGrid"></div>
 
     <div class="yt-cta reveal">
-      <a href="https://www.youtube.com/@UTPOriginals" target="_blank" class="btn-yt">
+      <a href="https://www.youtube.com/@UTPOriginals" target="_blank" class="btn-yt" rel="noopener">
         <svg width="22" height="22" viewBox="0 0 24 24" fill="white"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg>
         Subscribe &amp; Watch More
       </a>
@@ -643,14 +172,14 @@
       <div class="show-card reveal">
         <div class="show-thumb cars">
           <span class="show-badge b-orange">Flagship</span>
-          <div class="show-emoji">🏎️</div>
+          <div class="show-emoji" aria-hidden="true">🏎️</div>
         </div>
         <div class="show-body">
           <h3>Telugu Car Shows</h3>
           <p>Epic automotive showcases celebrating the passion for cars inside the Telugu community. From exotic supercars to jaw-dropping custom builds — we bring you the culture.</p>
           <div class="show-foot">
             <span class="show-tag2">🔥 Trending Series</span>
-            <a class="watch-a" href="https://www.youtube.com/@UTPOriginals" target="_blank">Watch ▶</a>
+            <a class="watch-a" href="https://www.youtube.com/@UTPOriginals" target="_blank" rel="noopener">Watch ▶</a>
           </div>
         </div>
       </div>
@@ -658,14 +187,14 @@
       <div class="show-card reveal">
         <div class="show-thumb pod">
           <span class="show-badge b-purple">Weekly</span>
-          <div class="show-emoji">🎙️</div>
+          <div class="show-emoji" aria-hidden="true">🎙️</div>
         </div>
         <div class="show-body">
           <h3>Entrepreneur Podcasts</h3>
           <p>Deep-dive conversations with Telugu entrepreneurs, business leaders, and innovators across America. Real stories of hustle, vision, and the American dream.</p>
           <div class="show-foot">
             <span class="show-tag2">💡 New Episodes Weekly</span>
-            <a class="watch-a" href="https://www.youtube.com/@UTPOriginals" target="_blank">Watch ▶</a>
+            <a class="watch-a" href="https://www.youtube.com/@UTPOriginals" target="_blank" rel="noopener">Watch ▶</a>
           </div>
         </div>
       </div>
@@ -673,14 +202,14 @@
       <div class="show-card reveal">
         <div class="show-thumb celeb">
           <span class="show-badge b-teal">Exclusive</span>
-          <div class="show-emoji">⭐</div>
+          <div class="show-emoji" aria-hidden="true">⭐</div>
         </div>
         <div class="show-body">
           <h3>Celebrity Interviews</h3>
           <p>Face-to-face with the biggest names in Telugu entertainment, business, and culture. Exclusive access to the famous personalities you love.</p>
           <div class="show-foot">
             <span class="show-tag2">🌟 Exclusive Access</span>
-            <a class="watch-a" href="https://www.youtube.com/@UTPOriginals" target="_blank">Watch ▶</a>
+            <a class="watch-a" href="https://www.youtube.com/@UTPOriginals" target="_blank" rel="noopener">Watch ▶</a>
           </div>
         </div>
       </div>
@@ -688,14 +217,14 @@
       <div class="show-card reveal">
         <div class="show-thumb collab">
           <span class="show-badge b-gold">Collab</span>
-          <div class="show-emoji">🤝</div>
+          <div class="show-emoji" aria-hidden="true">🤝</div>
         </div>
         <div class="show-body">
           <h3>Influencer Collabs</h3>
           <p>We partner with top Telugu influencers across the US to create high-energy content that resonates with our growing nationwide community.</p>
           <div class="show-foot">
             <span class="show-tag2">🎬 Multi-Platform</span>
-            <a class="watch-a" href="https://www.youtube.com/@UTPOriginals" target="_blank">Watch ▶</a>
+            <a class="watch-a" href="https://www.youtube.com/@UTPOriginals" target="_blank" rel="noopener">Watch ▶</a>
           </div>
         </div>
       </div>
@@ -713,10 +242,10 @@
         <div class="about-box">
           <span class="about-bg-text">UTP</span>
           <div class="about-icons">
-            <div class="ai-item"><div class="emo">🎬</div><div class="lbl">Production</div></div>
-            <div class="ai-item"><div class="emo">🎙️</div><div class="lbl">Podcasts</div></div>
-            <div class="ai-item"><div class="emo">🏎️</div><div class="lbl">Car Shows</div></div>
-            <div class="ai-item"><div class="emo">🤝</div><div class="lbl">Collabs</div></div>
+            <div class="ai-item"><div class="emo" aria-hidden="true">🎬</div><div class="lbl">Production</div></div>
+            <div class="ai-item"><div class="emo" aria-hidden="true">🎙️</div><div class="lbl">Podcasts</div></div>
+            <div class="ai-item"><div class="emo" aria-hidden="true">🏎️</div><div class="lbl">Car Shows</div></div>
+            <div class="ai-item"><div class="emo" aria-hidden="true">🤝</div><div class="lbl">Collabs</div></div>
           </div>
         </div>
         <div class="about-tag">📍 Dallas, TX → Nationwide</div>
@@ -730,21 +259,21 @@
 
         <div class="features">
           <div class="feat">
-            <div class="feat-ico">🎯</div>
+            <div class="feat-ico" aria-hidden="true">🎯</div>
             <div class="feat-txt">
               <h4>Telugu-First Content</h4>
               <p>Created for the diaspora, rooted in culture, built for a global stage.</p>
             </div>
           </div>
           <div class="feat">
-            <div class="feat-ico">🚀</div>
+            <div class="feat-ico" aria-hidden="true">🚀</div>
             <div class="feat-txt">
               <h4>Influencer Partnerships</h4>
               <p>We collaborate with top creators who share our vision and community values.</p>
             </div>
           </div>
           <div class="feat">
-            <div class="feat-ico">🌎</div>
+            <div class="feat-ico" aria-hidden="true">🌎</div>
             <div class="feat-txt">
               <h4>National Reach</h4>
               <p>Based in Dallas, we produce content and host events across the entire US.</p>
@@ -768,17 +297,17 @@
 
     <div class="comm-grid">
       <div class="comm-card reveal">
-        <div class="comm-emo">🏡</div>
+        <div class="comm-emo" aria-hidden="true">🏡</div>
         <h3>Dallas to USA</h3>
         <p>Started in the heart of Dallas — one of the largest Telugu communities in America — and now expanding nationwide to connect our people everywhere they are.</p>
       </div>
       <div class="comm-card reveal">
-        <div class="comm-emo">🎭</div>
+        <div class="comm-emo" aria-hidden="true">🎭</div>
         <h3>Culture &amp; Entertainment</h3>
         <p>We blend Telugu culture with American energy. Every show is a celebration of who we are — our language, our traditions, our ambition, our joy.</p>
       </div>
       <div class="comm-card reveal">
-        <div class="comm-emo">💼</div>
+        <div class="comm-emo" aria-hidden="true">💼</div>
         <h3>Empowering Success</h3>
         <p>From entrepreneur spotlights to community events, we shine a light on Telugu achievers, dreamers, and leaders who are shaping America's future.</p>
       </div>
@@ -796,11 +325,11 @@
         <h2 class="contact-title">Ready to <span class="grad-text">Create</span> Something Epic?</h2>
         <p class="contact-desc">Whether you're an influencer, brand, entrepreneur, or personality looking to tell your story — we're always hunting for our next great collaboration.</p>
         <div class="socials">
-          <a href="https://www.youtube.com/@UTPOriginals" target="_blank" class="soc-btn soc-yt">
+          <a href="https://www.youtube.com/@UTPOriginals" target="_blank" class="soc-btn soc-yt" rel="noopener">
             <svg width="17" height="17" viewBox="0 0 24 24" fill="currentColor"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg>
             YouTube
           </a>
-          <a href="https://instagram.com/utporiginals" target="_blank" class="soc-btn soc-ig">
+          <a href="https://instagram.com/utporiginals" target="_blank" class="soc-btn soc-ig" rel="noopener">
             <svg width="17" height="17" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
             Instagram
           </a>
@@ -811,10 +340,10 @@
       <div class="cform reveal">
         <h3>✦ Let's Collaborate</h3>
         <form onsubmit="submitForm(event)">
-          <div class="fgrp"><input type="text"  placeholder="Your Name" required /></div>
-          <div class="fgrp"><input type="email" placeholder="Your Email" required /></div>
-          <div class="fgrp"><input type="text"  placeholder="Interested in? (Car Show, Podcast, Collab…)" /></div>
-          <div class="fgrp"><textarea placeholder="Tell us about yourself or your idea…"></textarea></div>
+          <div class="fgrp"><input type="text"  placeholder="Your Name" aria-label="Your Name" required /></div>
+          <div class="fgrp"><input type="email" placeholder="Your Email" aria-label="Your Email" required /></div>
+          <div class="fgrp"><input type="text"  placeholder="Interested in? (Car Show, Podcast, Collab…)" aria-label="Interested in" /></div>
+          <div class="fgrp"><textarea placeholder="Tell us about yourself or your idea…" aria-label="Tell us about yourself"></textarea></div>
           <button class="fsubmit" type="submit">Send Message ✦</button>
         </form>
       </div>
@@ -830,7 +359,7 @@
       © 2025 <span>UTP Originals</span> · UTP Networks · Dallas, TX · Made with ❤️ for the Telugu Community
     </div>
     <div class="footer-links">
-      <a href="https://www.youtube.com/@UTPOriginals" target="_blank">YouTube</a>
+      <a href="https://www.youtube.com/@UTPOriginals" target="_blank" rel="noopener">YouTube</a>
       <a href="#shows">Shows</a>
       <a href="#about">About</a>
       <a href="#contact">Contact</a>
@@ -838,149 +367,8 @@
   </div>
 </footer>
 
-<script>
-  /* ── Scroll reveal ── */
-  const io = new IntersectionObserver(entries => {
-    entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('on'); io.unobserve(e.target); } });
-  }, { threshold: 0.1 });
-  document.querySelectorAll('.reveal').forEach(el => io.observe(el));
-
-  /* ── Navbar opacity on scroll ── */
-  window.addEventListener('scroll', () => {
-    const n = document.getElementById('navbar');
-    n.style.background = window.scrollY > 50
-      ? 'rgba(7,7,14,.97)'
-      : 'rgba(7,7,14,.82)';
-  });
-
-  /* ── Contact form ── */
-  function submitForm(e) {
-    e.preventDefault();
-    const btn = e.target.querySelector('.fsubmit');
-    btn.textContent = '✓ Message Sent!';
-    btn.style.background = 'linear-gradient(135deg,#00C851,#007E33)';
-    setTimeout(() => {
-      btn.textContent = 'Send Message ✦';
-      btn.style.background = '';
-      e.target.reset();
-    }, 3200);
-  }
-
-  /* ══════════════════════════════════════════
-     YOUTUBE VIDEO GALLERY
-     Fetches latest videos from channel RSS feed
-     via rss2json (free, no API key needed)
-  ══════════════════════════════════════════ */
-  const YT_CHANNEL_ID = 'UCp8BLYf-hTUwhH4TZfUDE_A';
-  const RSS_URL = `https://www.youtube.com/feeds/videos.xml?channel_id=${YT_CHANNEL_ID}`;
-  const API_URL = `https://api.rss2json.com/v1/api.json?rss_url=${encodeURIComponent(RSS_URL)}&api_key=&count=12`;
-
-  function extractVideoId(url) {
-    const m = url.match(/[?&]v=([^&]+)/) || url.match(/youtu\.be\/([^?]+)/);
-    return m ? m[1] : null;
-  }
-
-  function formatDate(dateStr) {
-    try {
-      const d = new Date(dateStr);
-      return d.toLocaleDateString('en-US', { month: 'short', day: 'numeric', year: 'numeric' });
-    } catch { return ''; }
-  }
-
-  function loadVideo(videoId, thumbEl) {
-    const featured = document.getElementById('ytFeatured');
-    featured.innerHTML = `
-      <iframe
-        src="https://www.youtube.com/embed/${videoId}?autoplay=1&rel=0&modestbranding=1&color=white"
-        title="UTP Originals"
-        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-        allowfullscreen>
-      </iframe>`;
-    // highlight active thumb
-    document.querySelectorAll('.yt-thumb').forEach(t => t.classList.remove('active'));
-    if (thumbEl) thumbEl.classList.add('active');
-    // scroll to player smoothly
-    document.getElementById('watch').scrollIntoView({ behavior: 'smooth', block: 'start' });
-  }
-
-  function renderVideos(items) {
-    const grid = document.getElementById('ytGrid');
-    const featured = document.getElementById('ytFeatured');
-
-    if (!items || items.length === 0) {
-      featured.innerHTML = `<div class="yt-loading" style="position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;background:var(--bg-card)">
-        <span style="font-size:32px;margin-bottom:12px">📺</span>
-        <span>Visit our <a href="https://www.youtube.com/@UTPOriginals" target="_blank" style="color:var(--orange)">YouTube channel</a> to watch!</span>
-      </div>`;
-      return;
-    }
-
-    // Load first video into featured player (no autoplay)
-    const firstId = extractVideoId(items[0].link);
-    if (firstId) {
-      featured.innerHTML = `
-        <iframe
-          src="https://www.youtube.com/embed/${firstId}?rel=0&modestbranding=1&color=white"
-          title="${items[0].title}"
-          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-          allowfullscreen>
-        </iframe>`;
-    }
-
-    // Build thumbnail grid for all videos
-    grid.innerHTML = items.map((item, i) => {
-      const vid = extractVideoId(item.link);
-      if (!vid) return '';
-      const thumb = item.thumbnail || `https://img.youtube.com/vi/${vid}/mqdefault.jpg`;
-      return `
-        <div class="yt-thumb${i === 0 ? ' active' : ''}" onclick="loadVideo('${vid}', this)" data-vid="${vid}">
-          <div class="yt-thumb-img">
-            <img src="${thumb}" alt="${item.title}" loading="lazy" onerror="this.src='https://img.youtube.com/vi/${vid}/mqdefault.jpg'">
-            <div class="yt-play-overlay">
-              <div class="yt-play-icon">
-                <svg width="16" height="16" viewBox="0 0 24 24" fill="white"><path d="M8 5v14l11-7z"/></svg>
-              </div>
-            </div>
-          </div>
-          <div class="yt-thumb-info">
-            <div class="yt-thumb-title">${item.title}</div>
-            <div class="yt-thumb-date">${formatDate(item.pubDate)}</div>
-          </div>
-        </div>`;
-    }).join('');
-  }
-
-  // Fetch videos on page load
-  fetch(API_URL)
-    .then(r => r.json())
-    .then(data => {
-      if (data.status === 'ok' && data.items && data.items.length) {
-        renderVideos(data.items);
-      } else {
-        // Fallback: direct channel link
-        document.getElementById('ytFeatured').innerHTML = `
-          <div style="position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;background:var(--bg-card);gap:16px">
-            <span style="font-size:48px">📺</span>
-            <p style="color:var(--gray);font-size:15px">Watch all our videos on YouTube</p>
-            <a href="https://www.youtube.com/@UTPOriginals" target="_blank" class="btn-yt" style="margin-top:8px">
-              <svg width="20" height="20" viewBox="0 0 24 24" fill="white"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg>
-              Watch on YouTube
-            </a>
-          </div>`;
-      }
-    })
-    .catch(() => {
-      document.getElementById('ytFeatured').innerHTML = `
-        <div style="position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;background:var(--bg-card);gap:16px">
-          <span style="font-size:48px">📺</span>
-          <p style="color:var(--gray);font-size:15px">Watch all our videos on YouTube</p>
-          <a href="https://www.youtube.com/@UTPOriginals" target="_blank" class="btn-yt" style="margin-top:8px">
-            <svg width="20" height="20" viewBox="0 0 24 24" fill="white"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg>
-            Watch on YouTube
-          </a>
-        </div>`;
-    });
-</script>
+<!-- External Scripts -->
+<script src="script.js"></script>
 
 </body>
 </html>
