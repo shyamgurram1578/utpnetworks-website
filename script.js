@@ -175,17 +175,17 @@ function showYtFallback() {
     </div>`;
 }
 
-/* ── Film Strip: Dynamic YouTube Marquee ── */
+/* ── Marquee: Dynamic YouTube Feed ── */
 const YOUTUBE_API_KEY = 'YOUR_YOUTUBE_API_KEY'; // Placeholder
 const CHANNEL_ID = 'UCp8BLYf-hTUwhH4TZfUDE_A';
 
-async function fetchYouTubeVideos() {
-  const track = document.getElementById('dynamicFilmTrack');
+async function fetchYouTubeMarquee() {
+  const track = document.getElementById('marqueeTrack');
   if (!track) return;
 
   try {
     const uploadsPlaylistId = CHANNEL_ID.replace('UC', 'UU');
-    const response = await fetch(`https://www.googleapis.com/youtube/v3/playlistItems?part=snippet&maxResults=10&playlistId=${uploadsPlaylistId}&key=${YOUTUBE_API_KEY}`);
+    const response = await fetch(`https://www.googleapis.com/youtube/v3/playlistItems?part=snippet&maxResults=20&playlistId=${uploadsPlaylistId}&key=${YOUTUBE_API_KEY}`);
     const data = await response.json();
 
     if (data.items) {
@@ -194,27 +194,28 @@ async function fetchYouTubeVideos() {
       throw new Error("No items found");
     }
   } catch (error) {
-    console.error("YouTube API failed, using fallback:", error);
-    const fallbackIds = ['zBph9KWybPg', '45S_cOmmw20', 'qMv1-B_WkGE', '0N8f_F5fT5Q'];
+    console.error("YouTube API failed, using marquee fallback:", error);
+    const fallbackIds = ['zBph9KWybPg', '45S_cOmmw20', 'qMv1-B_WkGE', '0N8f_F5fT5Q', 'zBph9KWybPg', '45S_cOmmw20'];
     const fallbackItems = fallbackIds.map(id => ({ snippet: { resourceId: { videoId: id } } }));
     renderMarquee(fallbackItems);
   }
 }
 
 function renderMarquee(items) {
-  const track = document.getElementById('dynamicFilmTrack');
+  const track = document.getElementById('marqueeTrack');
+  // Duplicate the array for a seamless CSS marquee loop
   const allItems = [...items, ...items]; 
   
-  track.innerHTML = allItems.map(item => `
-    <div class="film-frame">
-      <div class="yt-player" data-video-id="${item.snippet.resourceId.videoId}"></div>
+  track.innerHTML = allItems.map((item, index) => `
+    <div class="video-slide" data-index="${index}">
+      <div class="yt-marquee-player" data-video-id="${item.snippet.resourceId.videoId}"></div>
     </div>
   `).join('');
 
-  initYouTubePlayers();
+  initMarqueePlayers();
 }
 
-function initYouTubePlayers() {
+function initMarqueePlayers() {
   if (typeof YT === 'undefined' || !YT.Player) {
     const tag = document.createElement('script');
     tag.src = "https://www.youtube.com/iframe_api";
@@ -226,9 +227,9 @@ function initYouTubePlayers() {
 }
 
 window.onYouTubeIframeAPIReady = function() {
-  const frames = document.querySelectorAll('.film-frame');
-  frames.forEach((frame) => {
-    const playerDiv = frame.querySelector('.yt-player');
+  const slides = document.querySelectorAll('.video-slide');
+  slides.forEach((slide) => {
+    const playerDiv = slide.querySelector('.yt-marquee-player');
     if (!playerDiv || playerDiv.tagName === 'IFRAME') return;
     
     const videoId = playerDiv.getAttribute('data-video-id');
@@ -244,14 +245,14 @@ window.onYouTubeIframeAPIReady = function() {
           event.target.mute();
           event.target.playVideo();
           
-          frame.addEventListener('mouseenter', () => {
+          slide.addEventListener('mouseenter', () => {
             try {
               event.target.unMute();
               event.target.playVideo();
             } catch (e) {}
           });
           
-          frame.addEventListener('mouseleave', () => {
+          slide.addEventListener('mouseleave', () => {
             event.target.mute();
             event.target.pauseVideo();
           });
@@ -263,5 +264,5 @@ window.onYouTubeIframeAPIReady = function() {
 
 // Initialize
 document.addEventListener('DOMContentLoaded', () => {
-  fetchYouTubeVideos();
+  fetchYouTubeMarquee();
 });
