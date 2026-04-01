@@ -50,8 +50,8 @@ function submitForm(e) {
 }
 
 /* ── Infinite Video Marquee ── */
-const videoIds = ['dQw4w9WgXcQ', '3JZ_D3ELwOQ', '2Vv-BfVoq4g', 'L_jWHffIx5E', 'tPEE9ZwTmy0', 'JGwWNGJdvx8'];
-const marqueeVideos = [...videoIds, ...videoIds];
+const videoIds = ['jUvt0sBmmIQ', '45S_cOmmw20', '5uTp-PwcuTw', 'IiIfziaSuMo', '40B1UWkHKXc'];
+const marqueeVideos = [...videoIds, ...videoIds, ...videoIds];
 
 function initMarquee() {
   const track = document.getElementById('marqueeTrack');
@@ -60,7 +60,7 @@ function initMarquee() {
   track.innerHTML = marqueeVideos.map(id => `
     <div class="video-card">
       <iframe 
-        src="https://www.youtube.com/embed/${id}?enablejsapi=1&mute=1" 
+        src="https://www.youtube.com/embed/${id}?enablejsapi=1&mute=1&controls=0" 
         allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
         allowfullscreen>
       </iframe>

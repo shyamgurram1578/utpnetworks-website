@@ -490,7 +490,7 @@ footer {
 .marquee-container {
   width: 100vw;
   overflow: hidden;
-  background: #07070E;
+  background: transparent;
   padding: 20px 0;
   position: relative;
   left: 50%;
@@ -508,17 +508,20 @@ footer {
   animation-play-state: paused;
 }
 .video-card {
-  width: 300px; /* Fixed small width */
-  height: 170px; /* Fixed 16:9 height */
+  width: 280px; /* Keeps the videos small */
+  height: 157px; /* Perfect 16:9 ratio */
   flex-shrink: 0;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.5);
 }
 .video-card iframe {
   width: 100%;
   height: 100%;
   border: none;
-  border-radius: 8px;
+  pointer-events: auto;
 }
 @keyframes scrollMarquee {
   0% { transform: translateX(0); }
-  100% { transform: translateX(-50%); }
+  100% { transform: translateX(-33.33%); } /* Matches the triple array duplication */
 }
