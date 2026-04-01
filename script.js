@@ -60,12 +60,26 @@ function initMarquee() {
   track.innerHTML = marqueeVideos.map(id => `
     <div class="video-card">
       <iframe 
-        src="https://www.youtube.com/embed/${id}?enablejsapi=1&mute=1&controls=0" 
+        src="https://www.youtube.com/embed/${id}?enablejsapi=1&autoplay=1&mute=1&controls=0&loop=1&playlist=${id}" 
         allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
         allowfullscreen>
       </iframe>
     </div>
   `).join('');
+
+  // Add hover audio control
+  const cards = track.querySelectorAll('.video-card');
+  cards.forEach(card => {
+    const iframe = card.querySelector('iframe');
+    
+    card.addEventListener('mouseenter', () => {
+      iframe.contentWindow.postMessage('{"event":"command","func":"unMute","args":[]}', '*');
+    });
+    
+    card.addEventListener('mouseleave', () => {
+      iframe.contentWindow.postMessage('{"event":"command","func":"mute","args":[]}', '*');
+    });
+  });
 }
 
 document.addEventListener('DOMContentLoaded', initMarquee);
